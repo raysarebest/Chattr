@@ -17,6 +17,8 @@
 		4C18C4F61A0E89190074A614 /* ChattrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4F51A0E89190074A614 /* ChattrTests.m */; };
 		4C18C5031A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */; };
 		4C18C5061A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		4C18C5091A0EA7FC0074A614 /* HRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5081A0EA7FC0074A614 /* HRLoginViewController.m */; };
+		4C18C50C1A0EAA050074A614 /* HRSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C50B1A0EAA050074A614 /* HRSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		4C18C5041A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		4C18C5071A0EA7FC0074A614 /* HRLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRLoginViewController.h; sourceTree = "<group>"; };
+		4C18C5081A0EA7FC0074A614 /* HRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRLoginViewController.m; sourceTree = "<group>"; };
+		4C18C50A1A0EAA050074A614 /* HRSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRSignUpViewController.h; sourceTree = "<group>"; };
+		4C18C50B1A0EAA050074A614 /* HRSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRSignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +144,20 @@
 				4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				4C18C5011A0E9D770074A614 /* TPKeyboardAvoidingScrollView.h */,
 				4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */,
+				4C18C50D1A0EAA170074A614 /* Authentication */,
 			);
 			name = "External Libraries";
+			sourceTree = "<group>";
+		};
+		4C18C50D1A0EAA170074A614 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4C18C50A1A0EAA050074A614 /* HRSignUpViewController.h */,
+				4C18C50B1A0EAA050074A614 /* HRSignUpViewController.m */,
+				4C18C5071A0EA7FC0074A614 /* HRLoginViewController.h */,
+				4C18C5081A0EA7FC0074A614 /* HRLoginViewController.m */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +263,10 @@
 			files = (
 				4C18C4DC1A0E89190074A614 /* HRAppDelegate.m in Sources */,
 				4C18C5061A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				4C18C50C1A0EAA050074A614 /* HRSignUpViewController.m in Sources */,
 				4C18C5031A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				4C18C4DF1A0E89190074A614 /* HRMasterViewController.m in Sources */,
+				4C18C5091A0EA7FC0074A614 /* HRLoginViewController.m in Sources */,
 				4C18C4D91A0E89190074A614 /* main.m in Sources */,
 				4C18C4E21A0E89190074A614 /* HRDetailViewController.m in Sources */,
 			);
