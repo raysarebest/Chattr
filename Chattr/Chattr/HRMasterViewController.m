@@ -18,22 +18,24 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     //Set up loading view while we determine if the user is logged in
-//    UIViewController *overlay = [[UIViewController alloc] init];
-//    overlay.view.frame = [UIScreen mainScreen].bounds;
-//    overlay.view.alpha = .5;
-//    overlay.view.backgroundColor = [UIColor whiteColor];
-//    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] init];
-//    spinner.center = overlay.view.center;
-//    [self presentViewController:overlay animated:YES completion:nil];
-//    [spinner startAnimating];
-//    NSLog(@"%f, %f, %f, %f", overlay.view.frame.origin.x, overlay.view.frame.origin.y, overlay.view.frame.size.width, overlay.view.frame.size.height);
-    [self.db observeAuthEventWithBlock:^(FAuthData *authData) {
+    CGRect viewport = [UIScreen mainScreen].bounds;
+    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, viewport.size.width, viewport.size.height)];
+    overlay.frame = [UIScreen mainScreen].bounds;
+    overlay.alpha = .75;
+    overlay.backgroundColor = [UIColor whiteColor];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = overlay.center;
+    [overlay addSubview:spinner];
+    [spinner startAnimating];
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:overlay];
+    [self.db observeAuthEventWithBlock:^(FAuthData *authData){
         if(authData){
             //We're logged in, set up the list of conversations
+            [overlay removeFromSuperview];
         }
         else{
             //Tell them to log in by sending them to the login view
-            //[self.navigationController performSegueWithIdentifier:@"login" sender:self.navigationController];
+            [self.navigationController performSegueWithIdentifier:@"login" sender:self.navigationController];
         }
     }];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
