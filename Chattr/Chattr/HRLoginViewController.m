@@ -7,11 +7,12 @@
 //
 
 #import "HRLoginViewController.h"
-
+#import <Firebase/Firebase.h>
 @interface HRLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property (strong, nonatomic) Firebase *db;
 -(IBAction)login;
 @end
 @implementation HRLoginViewController
@@ -19,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.hidden = YES;
+    
 }
 -(void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
@@ -34,5 +36,11 @@
 }
 */
 -(IBAction)login{
+}
+-(Firebase *)db{
+    if(!_db){
+        _db = [[Firebase alloc] initWithUrl:@"https://blistering-inferno-2971.firebaseio.com/"];
+    }
+    return _db;
 }
 @end
