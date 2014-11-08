@@ -9,7 +9,6 @@
 #import "HRMasterViewController.h"
 #import "HRDetailViewController.h"
 #import <Firebase/Firebase.h>
-#define HRFirebaseURLString @"https://blistering-inferno-2971.firebaseio.com/"
 @interface HRMasterViewController()
 @property (strong, nonatomic) Firebase *db;
 @property NSMutableArray *objects;
@@ -88,7 +87,7 @@
 #pragma mark - Object Lazy Instantiation
 -(Firebase *)db{
     if(!_db){
-        _db = [[Firebase alloc] initWithUrl:HRFirebaseURLString];
+        _db = [[Firebase alloc] initWithUrl:@"https://blistering-inferno-2971.firebaseio.com/"];
     }
     return _db;
 }
