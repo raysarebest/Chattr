@@ -115,6 +115,7 @@
 		4C18C4D51A0E89190074A614 /* Chattr */ = {
 			isa = PBXGroup;
 			children = (
+				4C18C50D1A0EAA170074A614 /* Authentication */,
 				4C18C4FF1A0E9A850074A614 /* External Libraries */,
 				4C18C4DA1A0E89190074A614 /* HRAppDelegate.h */,
 				4C18C4DB1A0E89190074A614 /* HRAppDelegate.m */,
@@ -163,7 +164,6 @@
 				4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 				4C18C5011A0E9D770074A614 /* TPKeyboardAvoidingScrollView.h */,
 				4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */,
-				4C18C50D1A0EAA170074A614 /* Authentication */,
 			);
 			name = "External Libraries";
 			sourceTree = "<group>";
@@ -507,6 +507,7 @@
 				4C18C4FB1A0E89190074A614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C18C4FC1A0E89190074A614 /* Build configuration list for PBXNativeTarget "ChattrTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				4C18C4FE1A0E89190074A614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
