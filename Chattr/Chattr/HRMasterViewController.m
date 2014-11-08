@@ -26,7 +26,7 @@
 //    spinner.center = overlay.view.center;
 //    [self presentViewController:overlay animated:YES completion:nil];
 //    [spinner startAnimating];
-    NSLog(@"%f, %f, %f, %f", overlay.view.frame.origin.x, overlay.view.frame.origin.y, overlay.view.frame.size.width, overlay.view.frame.size.height);
+//    NSLog(@"%f, %f, %f, %f", overlay.view.frame.origin.x, overlay.view.frame.origin.y, overlay.view.frame.size.width, overlay.view.frame.size.height);
     [self.db observeAuthEventWithBlock:^(FAuthData *authData) {
         if(authData){
             //We're logged in, set up the list of conversations
