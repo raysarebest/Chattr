@@ -7,9 +7,7 @@
 //
 
 @import UIKit;
-
 @interface HRMasterViewController : UITableViewController
-
 
 @end
 
