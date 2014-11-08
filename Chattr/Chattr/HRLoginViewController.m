@@ -9,9 +9,12 @@
 #import "HRLoginViewController.h"
 
 @interface HRLoginViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *emailLabel;
+@property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
+@property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+- (IBAction)login;
+- (IBAction)signUp;
 @end
-
 @implementation HRLoginViewController
 
 - (void)viewDidLoad {
@@ -35,4 +38,13 @@
 }
 */
 
+- (IBAction)logIn:(id)sender {
+}
+- (IBAction)logIn {
+}
+- (IBAction)login {
+}
+
+- (IBAction)signUp {
+}
 @end

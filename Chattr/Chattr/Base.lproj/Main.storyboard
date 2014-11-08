@@ -124,6 +124,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="signUp" destination="zwm-Yv-nVe" eventType="touchUpInside" id="281-5C-QOV"/>
                                     <segue destination="7QU-JC-sQC" kind="modal" identifier="signUp" id="tJO-o5-d3C"/>
                                 </connections>
                             </button>
@@ -141,6 +142,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="login" destination="zwm-Yv-nVe" eventType="touchUpInside" id="3jx-Jk-QLZ"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-Tu-k5p">
                                         <rect key="frame" x="112" y="231" width="97" height="30"/>
@@ -158,6 +162,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zGc-8b-q0s"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="ssn-Tu-k5p" id="fXH-0P-xjU"/>
+                        <outlet property="passwordLabel" destination="H6C-xW-wkW" id="dHp-zr-nLG"/>
+                        <outlet property="scrollView" destination="J4E-oP-njs" id="Qt0-yf-Og8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEP-Qw-sZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,12 +207,21 @@
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUp" destination="7QU-JC-sQC" eventType="touchUpInside" id="0WD-CN-9Gn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordField" destination="K8X-F0-9RU" id="rfr-Wk-6i5"/>
+                        <outlet property="emailField" destination="n3m-KH-3aO" id="hPl-rf-Kal"/>
+                        <outlet property="passwordField" destination="0xQ-Yq-uly" id="JBJ-Ma-bSe"/>
+                        <outlet property="scrollView" destination="NIf-yu-Qtf" id="wYv-xH-QhQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYJ-Z0-GYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

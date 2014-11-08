@@ -9,9 +9,12 @@
 #import "HRSignUpViewController.h"
 
 @interface HRSignUpViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPasswordField;
+@property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+- (IBAction)signUp;
 @end
-
 @implementation HRSignUpViewController
 
 - (void)viewDidLoad {
@@ -34,4 +37,6 @@
 }
 */
 
+- (IBAction)signUp {
+}
 @end
