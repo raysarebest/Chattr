@@ -12,6 +12,7 @@
 @interface HRMasterViewController()
 @property (strong, nonatomic) Firebase *db;
 @property NSMutableArray *objects;
+- (IBAction)logout:(UIBarButtonItem *)sender;
 @end
 @implementation HRMasterViewController
 -(void)viewDidLoad{
@@ -37,9 +38,6 @@
             [self.navigationController performSegueWithIdentifier:@"login" sender:self.navigationController];
         }
     }];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 -(void)insertNewObject:(id)sender{
     if(!self.objects){
@@ -90,5 +88,9 @@
         _db = [[Firebase alloc] initWithUrl:@"https://blistering-inferno-2971.firebaseio.com/"];
     }
     return _db;
+}
+-(IBAction)logout:(UIBarButtonItem *)sender{
+    [self.db unauth];
+    [self.navigationController performSegueWithIdentifier:@"login" sender:self.navigationController];
 }
 @end
