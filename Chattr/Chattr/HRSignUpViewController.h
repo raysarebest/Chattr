@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface HRSignUpViewController : UIViewController
 

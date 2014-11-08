@@ -8,6 +8,7 @@
 
 #import "HRSignUpViewController.h"
 
+
 @interface HRSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
