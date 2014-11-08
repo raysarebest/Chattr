@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "HRAppDelegate.h"
+#import "HRDetailViewController.h"
 
-@interface AppDelegate ()
+@interface HRAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation HRAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

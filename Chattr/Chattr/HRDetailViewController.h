@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface DetailViewController : UIViewController
+@interface HRDetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

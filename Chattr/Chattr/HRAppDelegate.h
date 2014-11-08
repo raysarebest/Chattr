@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface HRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

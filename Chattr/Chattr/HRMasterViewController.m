@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "HRMasterViewController.h"
+#import "HRDetailViewController.h"
 
-@interface MasterViewController ()
+@interface HRMasterViewController ()
 
 @property NSMutableArray *objects;
 @end
 
-@implementation MasterViewController
+@implementation HRMasterViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];

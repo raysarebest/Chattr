@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "HRDetailViewController.h"
 
-@interface DetailViewController ()
+@interface HRDetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation HRDetailViewController
 
 #pragma mark - Managing the detail item
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface MasterViewController : UITableViewController
+@interface HRMasterViewController : UITableViewController
 
 
 @end
