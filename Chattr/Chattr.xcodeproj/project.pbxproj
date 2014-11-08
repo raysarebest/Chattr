@@ -19,6 +19,12 @@
 		4C18C5061A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		4C18C5091A0EA7FC0074A614 /* HRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5081A0EA7FC0074A614 /* HRLoginViewController.m */; };
 		4C18C50C1A0EAA050074A614 /* HRSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C50B1A0EAA050074A614 /* HRSignUpViewController.m */; };
+		4C18C50F1A0EB0580074A614 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C50E1A0EB0580074A614 /* Firebase.framework */; };
+		4C18C5121A0EB0920074A614 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5111A0EB0920074A614 /* libicucore.dylib */; };
+		4C18C5141A0EB09F0074A614 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5131A0EB09F0074A614 /* libc++.dylib */; };
+		4C18C5161A0EB0A80074A614 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5151A0EB0A80074A614 /* CFNetwork.framework */; };
+		4C18C5181A0EB0B70074A614 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5171A0EB0B70074A614 /* Security.framework */; };
+		4C18C51A1A0EB0C20074A614 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5191A0EB0C20074A614 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		4C18C5081A0EA7FC0074A614 /* HRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRLoginViewController.m; sourceTree = "<group>"; };
 		4C18C50A1A0EAA050074A614 /* HRSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRSignUpViewController.h; sourceTree = "<group>"; };
 		4C18C50B1A0EAA050074A614 /* HRSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRSignUpViewController.m; sourceTree = "<group>"; };
+		4C18C50E1A0EB0580074A614 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		4C18C5111A0EB0920074A614 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		4C18C5131A0EB09F0074A614 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		4C18C5151A0EB0A80074A614 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4C18C5171A0EB0B70074A614 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4C18C5191A0EB0C20074A614 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C18C51A1A0EB0C20074A614 /* SystemConfiguration.framework in Frameworks */,
+				4C18C5181A0EB0B70074A614 /* Security.framework in Frameworks */,
+				4C18C5161A0EB0A80074A614 /* CFNetwork.framework in Frameworks */,
+				4C18C5141A0EB09F0074A614 /* libc++.dylib in Frameworks */,
+				4C18C5121A0EB0920074A614 /* libicucore.dylib in Frameworks */,
+				4C18C50F1A0EB0580074A614 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,7 @@
 				4C18C4D51A0E89190074A614 /* Chattr */,
 				4C18C4F21A0E89190074A614 /* ChattrTests */,
 				4C18C4D41A0E89190074A614 /* Products */,
+				4C18C5101A0EB0700074A614 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +177,19 @@
 				4C18C5081A0EA7FC0074A614 /* HRLoginViewController.m */,
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		4C18C5101A0EB0700074A614 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C18C5191A0EB0C20074A614 /* SystemConfiguration.framework */,
+				4C18C5171A0EB0B70074A614 /* Security.framework */,
+				4C18C5151A0EB0A80074A614 /* CFNetwork.framework */,
+				4C18C5131A0EB09F0074A614 /* libc++.dylib */,
+				4C18C5111A0EB0920074A614 /* libicucore.dylib */,
+				4C18C50E1A0EB0580074A614 /* Firebase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +424,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Chattr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -405,6 +441,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Chattr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
