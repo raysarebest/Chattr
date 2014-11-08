@@ -35,6 +35,16 @@
 }
 */
 -(IBAction)login{
+    [self.db authUser:self.emailLabel.text password:self.passwordLabel.text withCompletionBlock:^(NSError *error, FAuthData *authData){
+        if(error){
+            //An error occurred, and we need to react accordingly
+            NSLog(@"Failure: %@", error);
+        }
+        else{
+            //The user logged in successfully, and we can transition to the list view
+            NSLog(@"Success: %@", authData);
+        }
+    }];
 }
 -(Firebase *)db{
     if(!_db){
