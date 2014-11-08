@@ -14,20 +14,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordField;
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
-- (IBAction)signUp;
+-(IBAction)signUp;
 @end
 @implementation HRSignUpViewController
-
-- (void)viewDidLoad {
+-(void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-- (void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 
@@ -37,7 +34,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)signUp {
+-(IBAction)signUp{
 }
 @end

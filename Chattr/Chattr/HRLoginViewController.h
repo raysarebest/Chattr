@@ -9,5 +9,4 @@
 @import UIKit;
 #import "TPKeyboardAvoidingScrollView.h"
 @interface HRLoginViewController : UIViewController
-
 @end

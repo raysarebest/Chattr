@@ -6,9 +6,7 @@
 //  Copyright (c) 2014 Human Productions. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "TPKeyboardAvoidingScrollView.h"
-
 @interface HRSignUpViewController : UIViewController
-
 @end

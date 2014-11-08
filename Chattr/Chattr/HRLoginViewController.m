@@ -12,22 +12,19 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
-- (IBAction)login;
-- (IBAction)signUp;
+-(IBAction)login;
+-(IBAction)signUp;
 @end
 @implementation HRLoginViewController
-
-- (void)viewDidLoad {
+-(void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.hidden = YES;
 }
-
-- (void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 
@@ -37,14 +34,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)logIn:(id)sender {
+-(IBAction)login{
 }
-- (IBAction)logIn {
-}
-- (IBAction)login {
-}
-
-- (IBAction)signUp {
+-(IBAction)signUp{
 }
 @end
