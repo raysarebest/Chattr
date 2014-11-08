@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 -(IBAction)login;
--(IBAction)signUp;
 @end
 @implementation HRLoginViewController
 -(void)viewDidLoad{
@@ -35,7 +34,5 @@
 }
 */
 -(IBAction)login{
-}
--(IBAction)signUp{
 }
 @end
