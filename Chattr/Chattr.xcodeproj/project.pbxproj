@@ -15,6 +15,8 @@
 		4C18C4E71A0E89190074A614 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4E61A0E89190074A614 /* Images.xcassets */; };
 		4C18C4EA1A0E89190074A614 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C4E81A0E89190074A614 /* LaunchScreen.xib */; };
 		4C18C4F61A0E89190074A614 /* ChattrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C4F51A0E89190074A614 /* ChattrTests.m */; };
+		4C18C5031A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */; };
+		4C18C5061A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		4C18C4EF1A0E89190074A614 /* ChattrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChattrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C18C4F41A0E89190074A614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C18C4F51A0E89190074A614 /* ChattrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChattrTests.m; sourceTree = "<group>"; };
+		4C18C5011A0E9D770074A614 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		4C18C5041A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		4C18C4D51A0E89190074A614 /* Chattr */ = {
 			isa = PBXGroup;
 			children = (
+				4C18C4FF1A0E9A850074A614 /* External Libraries */,
 				4C18C4DA1A0E89190074A614 /* HRAppDelegate.h */,
 				4C18C4DB1A0E89190074A614 /* HRAppDelegate.m */,
 				4C18C4DD1A0E89190074A614 /* HRMasterViewController.h */,
@@ -122,6 +129,17 @@
 				4C18C4F41A0E89190074A614 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C18C4FF1A0E9A850074A614 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				4C18C5041A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				4C18C5051A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				4C18C5011A0E9D770074A614 /* TPKeyboardAvoidingScrollView.h */,
+				4C18C5021A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m */,
+			);
+			name = "External Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C18C4DC1A0E89190074A614 /* HRAppDelegate.m in Sources */,
+				4C18C5061A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				4C18C5031A0E9D770074A614 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				4C18C4DF1A0E89190074A614 /* HRMasterViewController.m in Sources */,
 				4C18C4D91A0E89190074A614 /* main.m in Sources */,
 				4C18C4E21A0E89190074A614 /* HRDetailViewController.m in Sources */,
