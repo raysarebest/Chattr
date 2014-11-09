@@ -38,7 +38,37 @@
     [self.db authUser:self.emailLabel.text password:self.passwordLabel.text withCompletionBlock:^(NSError *error, FAuthData *authData){
         if(error){
             //An error occurred, and we need to react accordingly
-            NSLog(@"Failure: %@", error);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            switch(error.code){
+                case FAuthenticationErrorEmailTaken:
+                    alert.message = @"Sorry, but that email is already taken";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+                case FAuthenticationErrorInvalidEmail:
+                    alert.message = @"Sorry, but that isn't a valid email address";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+                case FAuthenticationErrorInvalidPassword:
+                    alert.message = @"Sorry, but that's the wrong password";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+                case FAuthenticationErrorNetworkError:
+                    alert.message = @"Sorry, but we can't communicate with the server at this time. Please make sure you are connected to the internet";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+                case FAuthenticationErrorPreempted:
+                    alert.message = @"It looks like someone else is trying to log in with that account right now. You should change your password";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+                case FAuthenticationErrorUserDoesNotExist:
+                    alert.message = @"It looks like you haven't registered with us yet. You should sign up!";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+                default:
+                    alert.message = @"Sorry, an unknown error occured";
+                    [self presentViewController:alert animated:YES completion:nil];
+                    break;
+            }
         }
         else{
             //The user logged in successfully, and we can transition to the list view
