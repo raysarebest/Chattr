@@ -41,23 +41,23 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
             switch(error.code){
                 case FAuthenticationErrorEmailTaken:
-                    alert.message = @"Sorry, but that email is already taken";
+                    alert.message = @"Sorry, but that email is already taken.";
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
                 case FAuthenticationErrorInvalidEmail:
-                    alert.message = @"Sorry, but that isn't a valid email address";
+                    alert.message = @"Sorry, but that isn't a valid email address.";
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
                 case FAuthenticationErrorInvalidPassword:
-                    alert.message = @"Sorry, but that's the wrong password";
+                    alert.message = @"Sorry, but that's the wrong password.";
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
                 case FAuthenticationErrorNetworkError:
-                    alert.message = @"Sorry, but we can't communicate with the server at this time. Please make sure you are connected to the internet";
+                    alert.message = @"Sorry, but we can't communicate with the server at this time. Please make sure you are connected to the internet.";
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
                 case FAuthenticationErrorPreempted:
-                    alert.message = @"It looks like someone else is trying to log in with that account right now. You should change your password";
+                    alert.message = @"It looks like someone else is trying to log in with that account right now. You should change your password.";
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
                 case FAuthenticationErrorUserDoesNotExist:
@@ -65,7 +65,7 @@
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
                 default:
-                    alert.message = @"Sorry, an unknown error occured";
+                    alert.message = @"Sorry, an unknown error occured.";
                     [self presentViewController:alert animated:YES completion:nil];
                     break;
             }
