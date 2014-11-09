@@ -26,6 +26,7 @@
 		4C18C5181A0EB0B70074A614 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5171A0EB0B70074A614 /* Security.framework */; };
 		4C18C51A1A0EB0C20074A614 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C5191A0EB0C20074A614 /* SystemConfiguration.framework */; };
 		4C21EFAC1A0F3B24004597C9 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21EFAB1A0F3B24004597C9 /* TPKeyboardAvoidingTableView.m */; };
+		4C21EFB61A0F454E004597C9 /* HRNewChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C21EFB51A0F454E004597C9 /* HRNewChatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		4C18C5191A0EB0C20074A614 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C21EFAA1A0F3B24004597C9 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		4C21EFAB1A0F3B24004597C9 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		4C21EFB41A0F454E004597C9 /* HRNewChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRNewChatViewController.h; sourceTree = "<group>"; };
+		4C21EFB51A0F454E004597C9 /* HRNewChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRNewChatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				4C18C4DE1A0E89190074A614 /* HRMasterViewController.m */,
 				4C18C4E01A0E89190074A614 /* HRDetailViewController.h */,
 				4C18C4E11A0E89190074A614 /* HRDetailViewController.m */,
+				4C21EFB41A0F454E004597C9 /* HRNewChatViewController.h */,
+				4C21EFB51A0F454E004597C9 /* HRNewChatViewController.m */,
 				4C18C4E31A0E89190074A614 /* Main.storyboard */,
 				4C18C4E61A0E89190074A614 /* Images.xcassets */,
 				4C18C4E81A0E89190074A614 /* LaunchScreen.xib */,
@@ -299,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C18C4DC1A0E89190074A614 /* HRAppDelegate.m in Sources */,
+				4C21EFB61A0F454E004597C9 /* HRNewChatViewController.m in Sources */,
 				4C18C5061A0E9DDD0074A614 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				4C18C50C1A0EAA050074A614 /* HRSignUpViewController.m in Sources */,
 				4C21EFAC1A0F3B24004597C9 /* TPKeyboardAvoidingTableView.m in Sources */,

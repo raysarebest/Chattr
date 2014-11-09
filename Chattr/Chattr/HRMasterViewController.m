@@ -11,8 +11,9 @@
 #import <Firebase/Firebase.h>
 @interface HRMasterViewController()
 @property (strong, nonatomic) Firebase *db;
-@property NSMutableArray *objects;
-- (IBAction)logout:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) NSMutableArray *conversations;
+-(IBAction)logout:(UIBarButtonItem *)sender;
+-(IBAction)newConversation:(UIBarButtonItem *)sender;
 @end
 @implementation HRMasterViewController
 -(void)viewDidLoad{
@@ -40,10 +41,10 @@
     }];
 }
 -(void)insertNewObject:(id)sender{
-    if(!self.objects){
-        self.objects = [[NSMutableArray alloc] init];
+    if(!self.conversations){
+        self.conversations = [[NSMutableArray alloc] init];
     }
-    [self.objects insertObject:[NSDate date] atIndex:0];
+    [self.conversations insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -51,7 +52,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"showDetail"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        NSDate *object = self.conversations[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
@@ -60,12 +61,11 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.objects.count;
+    return self.conversations.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
+    NSDate *object = self.conversations[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
 }
@@ -75,7 +75,7 @@
 }
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if(editingStyle == UITableViewCellEditingStyleDelete){
-        [self.objects removeObjectAtIndex:indexPath.row];
+        [self.conversations removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert){
@@ -92,5 +92,16 @@
 -(IBAction)logout:(UIBarButtonItem *)sender{
     [self.db unauth];
     [self.navigationController performSegueWithIdentifier:@"login" sender:self.navigationController];
+}
+-(IBAction)newConversation:(UIBarButtonItem *)sender{
+    [self.conversations insertObject:@"New Chat" atIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+-(NSMutableArray *)conversations{
+    if(!_conversations){
+        _conversations = [[NSMutableArray alloc] init];
+    }
+    return _conversations;
 }
 @end
