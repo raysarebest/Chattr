@@ -33,7 +33,41 @@
         [self.db createUser:self.emailField.text password:self.passwordField.text withCompletionBlock:^(NSError *error) {
             if(error){
                 //An error occurred, and we need to handle it accordingly
-                NSLog(@"%@", error);
+                if(error){
+                    //Although unlikely, an error occurred, and we need to handle it
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                    switch(error.code){
+                        case FAuthenticationErrorEmailTaken:
+                            alert.message = @"Sorry, but that email is already taken.";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                        case FAuthenticationErrorInvalidEmail:
+                            alert.message = @"Sorry, but that isn't a valid email address.";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                        case FAuthenticationErrorInvalidPassword:
+                            alert.message = @"Sorry, but that's the wrong password.";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                        case FAuthenticationErrorNetworkError:
+                            alert.message = @"Sorry, but we can't communicate with the server at this time. Please make sure you are connected to the internet.";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                        case FAuthenticationErrorPreempted:
+                            alert.message = @"It looks like someone else is trying to log in with that account right now. You should change your password.";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                        case FAuthenticationErrorUserDoesNotExist:
+                            alert.message = @"It looks like you haven't registered with us yet. You should sign up!";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                        default:
+                            alert.message = @"Sorry, an unknown error occured.";
+                            [self presentViewController:alert animated:YES completion:nil];
+                            break;
+                    }
+                }
             }
             else{
                 NSLog(@"User registered, authenticating...");
@@ -41,8 +75,38 @@
                 [self.db authUser:self.emailField.text password:self.passwordField.text withCompletionBlock:^(NSError *error, FAuthData *authData){
                     if(error){
                         //Although unlikely, an error occurred, and we need to handle it
-                        NSLog(@"User registered, but an authentication error occurred");
-                        NSLog(@"%@", error);
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                        switch(error.code){
+                            case FAuthenticationErrorEmailTaken:
+                                alert.message = @"Sorry, but that email is already taken.";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                            case FAuthenticationErrorInvalidEmail:
+                                alert.message = @"Sorry, but that isn't a valid email address.";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                            case FAuthenticationErrorInvalidPassword:
+                                alert.message = @"Sorry, but that's the wrong password.";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                            case FAuthenticationErrorNetworkError:
+                                alert.message = @"Sorry, but we can't communicate with the server at this time. Please make sure you are connected to the internet.";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                            case FAuthenticationErrorPreempted:
+                                alert.message = @"It looks like someone else is trying to log in with that account right now. You should change your password.";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                            case FAuthenticationErrorUserDoesNotExist:
+                                alert.message = @"It looks like you haven't registered with us yet. You should sign up!";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                            default:
+                                alert.message = @"Sorry, an unknown error occured.";
+                                [self presentViewController:alert animated:YES completion:nil];
+                                break;
+                        }
                     }
                     else{
                         //User successfully authenticated, we let them into the app
