@@ -7,12 +7,12 @@
 //
 
 #import "HRSignUpViewController.h"
-
-
+#import <Firebase/Firebase.h>
 @interface HRSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPasswordField;
+@property (strong, nonatomic) Firebase *db;
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 -(IBAction)signUp;
 @end
@@ -26,15 +26,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 -(IBAction)signUp{
+    NSLog(@"Sign Up button pressed");
+    if([self.passwordField.text isEqualToString:self.confirmPasswordField.text]){
+        NSLog(@"Registering user");
+        [self.db createUser:self.emailField.text password:self.passwordField.text withCompletionBlock:^(NSError *error) {
+            if(error){
+                //An error occurred, and we need to handle it accordingly
+                NSLog(@"%@", error);
+            }
+            else{
+                NSLog(@"User registered, authenticating...");
+                //User successfully created, now we log them in and let them into the app
+                [self.db authUser:self.emailField.text password:self.passwordField.text withCompletionBlock:^(NSError *error, FAuthData *authData){
+                    if(error){
+                        //Although unlikely, an error occurred, and we need to handle it
+                        NSLog(@"User registered, but an authentication error occurred");
+                        NSLog(@"%@", error);
+                    }
+                    else{
+                        //User successfully authenticated, we let them into the app
+                        NSLog(@"User successfully registered and authenticated");
+                        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }];
+            }
+        }];
+    }
+    else{
+        NSLog(@"Passwords do not match");
+    }
+}
+-(Firebase *)db{
+    if(!_db){
+        _db = [[Firebase alloc] initWithUrl:@"https://blistering-inferno-2971.firebaseio.com/"];
+    }
+    return _db;
 }
 @end

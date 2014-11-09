@@ -39,6 +39,7 @@
         if(error){
             //An error occurred, and we need to react accordingly
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Error" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
             switch(error.code){
                 case FAuthenticationErrorEmailTaken:
                     alert.message = @"Sorry, but that email is already taken";
