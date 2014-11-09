@@ -112,6 +112,7 @@
                         //User successfully authenticated, we let them into the app
                         NSLog(@"User successfully registered and authenticated");
                         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                        [[self.db childByAppendingPath:@"users"] updateChildValues:@{authData.uid:self.emailField.text}];
                     }
                 }];
             }

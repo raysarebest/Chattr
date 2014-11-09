@@ -39,6 +39,11 @@
             [self.navigationController performSegueWithIdentifier:@"login" sender:self.navigationController];
         }
     }];
+    [[self.db childByAppendingPath:[NSString stringWithFormat:@"conversations/%@", self.db.authData.uid]] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"New Data" message:[NSString stringWithFormat:@"%@", snapshot.value] preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 -(void)insertNewObject:(id)sender{
     if(!self.conversations){

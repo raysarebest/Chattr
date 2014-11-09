@@ -73,6 +73,7 @@
         }
         else{
             //The user logged in successfully, and we can transition to the list view
+            NSLog(@"%@", authData.uid);
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];

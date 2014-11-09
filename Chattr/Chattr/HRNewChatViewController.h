@@ -8,4 +8,5 @@
 
 @import UIKit;
 @interface HRNewChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSString *currentUser;
 @end

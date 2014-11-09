@@ -58,7 +58,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
+                    <navigationItem key="navigationItem" title="Conversations" id="tQt-TN-PWz">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="pNY-Tq-2eD">
                             <connections>
                                 <action selector="logout:" destination="pGg-6v-bdr" id="Lvw-J5-UDa"/>

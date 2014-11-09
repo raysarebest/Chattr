@@ -29,6 +29,12 @@
     topBorder.frame = CGRectMake(0, 0, self.messageView.frame.size.width, 1.0);
     topBorder.backgroundColor = [UIColor lightGrayColor].CGColor;
     [self.messageView.layer addSublayer:topBorder];
+    UITapGestureRecognizer *taps = [[UITapGestureRecognizer alloc] initWithTarget:self.recipientField action:@selector(resignFirstResponder)];
+    taps.numberOfTapsRequired = 2;
+    [self.navigationController.navigationBar addGestureRecognizer:taps];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self.messageField action:@selector(resignFirstResponder)];
+    taps.numberOfTapsRequired = 2;
+    [self.navigationController.navigationBar addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
 }
 -(void)didReceiveMemoryWarning{
@@ -46,7 +52,7 @@
 */
 -(Firebase *)db{
     if(!_db){
-        _db = [[[Firebase alloc] initWithUrl:@"https://blistering-inferno-2971.firebaseio.com/"] childByAutoId];
+        _db = [[Firebase alloc] initWithUrl:@"https://blistering-inferno-2971.firebaseio.com/"];
     }
     return _db;
 }
@@ -59,7 +65,29 @@
 }
 -(IBAction)send{
     if(![self.messageField.text isEqualToString:@""]){
-        
+        [[self.db childByAppendingPath:@"users"] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot){
+            for(NSString *key in snapshot.value){
+                if([key isEqualToString:self.db.authData.uid]){
+                    if([snapshot.value[key] isEqualToString:self.recipientField.text]){
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Messaging Error" message:@"You can't message yourself!" preferredStyle:UIAlertControllerStyleAlert];
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+                        [self presentViewController:alert animated:YES completion:nil];
+                    }
+                    //This is the current user
+                    NSLog(@"Current user found");
+                    continue;
+                }
+                if([snapshot.value[key] isEqualToString:self.recipientField.text]){
+                    NSLog(@"Recipient found");
+                    [[self.db childByAppendingPath:[NSString stringWithFormat:@"conversations/%@/%@", key, self.db.authData.uid]] updateChildValues:@{[NSString stringWithFormat:@"%i", (int)NSTimeIntervalSince1970]:self.messageField.text}];
+                }
+            }
+        }];
+    }
+    else if([self.recipientField.text isEqualToString:@""]){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Message Failed to Send" message:@"You must specify a recipient for this message!" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 @end
