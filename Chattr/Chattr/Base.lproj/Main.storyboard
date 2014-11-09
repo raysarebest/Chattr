@@ -14,7 +14,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="RxB-wf-QIq"/>
-                        <segue destination="zwm-Yv-nVe" kind="modal" identifier="login" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Xq4-65-djM"/>
+                        <segue destination="1A0-XD-1b5" kind="modal" identifier="login" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Xq4-65-djM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
@@ -154,7 +154,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7QU-JC-sQC" kind="modal" id="BBb-NG-zYb"/>
+                                    <segue destination="7QU-JC-sQC" kind="push" id="0b3-Tn-LbE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-Kb-pwY">
@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEP-Qw-sZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="758"/>
+            <point key="canvasLocation" x="453" y="758"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="4UT-np-zEc">
@@ -221,6 +221,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LfR-0G-J9R"/>
                     <connections>
                         <outlet property="confirmPasswordField" destination="K8X-F0-9RU" id="rfr-Wk-6i5"/>
                         <outlet property="emailField" destination="n3m-KH-3aO" id="hPl-rf-Kal"/>
@@ -230,7 +231,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYJ-Z0-GYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336" y="758"/>
+            <point key="canvasLocation" x="868" y="758"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gOA-nR-0HM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1A0-XD-1b5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eD8-pM-qsj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zwm-Yv-nVe" kind="relationship" relationship="rootViewController" id="f6C-pg-hD2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPA-9l-Kc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79" y="758"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
